@@ -1,6 +1,12 @@
 # sber-test-deposit-calculation
 Тестовое задание. Сбер. Сервис для расчета депозита
 
+## Задача
+
+![Задача](/docs/task/task.png)
+
+Алгоритм расчета: [/docs/task/example.xlsx](/docs/task/example.xlsx)
+
 ## Разработка
 
 ### Установка
