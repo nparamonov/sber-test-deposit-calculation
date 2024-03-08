@@ -29,3 +29,17 @@ poetry install
 ```shell
 poetry shell
 ```
+
+### Запуск
+
+Для запуска приложения необходимо предварительно активировать окружение `poetry shell`,
+либо запускать через команду `poetry run`.
+
+Пример запуска для Linux:
+
+```shell
+uvicorn src.main:deposit_calculation_app.app --loop uvloop --no-server-header --host 127.0.0.1 --port 8008
+```
+Для Windows uvloop недоступен, поэтому необходимо либо указать `--loop auto`, либо исключить данный параметр.
+
+Полный список доступных параметров: https://www.uvicorn.org/deployment/#running-from-the-command-line
