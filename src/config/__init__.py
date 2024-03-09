@@ -1,8 +1,9 @@
 import os
+from typing import Final
 
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+LOG_LEVEL: Final[str] = os.getenv("LOG_LEVEL", "INFO").upper()
 
-CUSTOM_LOGGERS = [
+CUSTOM_LOGGERS: Final[list[str]] = [
     "uvicorn",
     "uvicorn.error",
     "uvicorn.access",
