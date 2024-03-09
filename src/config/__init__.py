@@ -8,3 +8,5 @@ CUSTOM_LOGGERS: Final[list[str]] = [
     "uvicorn.error",
     "uvicorn.access",
 ]
+
+DATE_FORMAT: Final[str] = "%d.%m.%Y"
