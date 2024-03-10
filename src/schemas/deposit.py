@@ -16,6 +16,11 @@ def date_to_str(value: datetime.date) -> str:
     return value.strftime(DATE_FORMAT)
 
 
+def round_float(value: float) -> float:
+    """Округлить число до 2 знаков после запятой"""
+    return round(value, 2)
+
+
 DateValidator = BeforeValidator(str_to_date)
 
 class DepositCalculationResponse(RootModel[dict[datetime.date, float]]):
@@ -23,6 +28,7 @@ class DepositCalculationResponse(RootModel[dict[datetime.date, float]]):
     model_config = ConfigDict(
         json_encoders={
             datetime.date: date_to_str,
+            float: round_float,
         },
         json_schema_extra={
             "examples": [
