@@ -4,6 +4,7 @@ from starlette.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 
 QueryParamTypes = dict[str, str | int | float]
 
+@pytest.mark.e2e()
 def test_deposit_calculation(client: TestClient) -> None:
     """Test /deposit/calculation (success)"""
     params: QueryParamTypes = {
@@ -16,6 +17,7 @@ def test_deposit_calculation(client: TestClient) -> None:
     assert response.status_code == HTTP_200_OK
     assert response.json() == {"31.01.2021": 10050.0, "28.02.2021": 10100.25, "31.03.2021": 10150.75}
 
+@pytest.mark.e2e()
 @pytest.mark.parametrize(
     "test_params",
     [
