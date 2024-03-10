@@ -58,6 +58,7 @@ max-args = 10
 convention = "google"
 
 [tool.coverage.run]
+source = ["src"]
 data_file = ".coverage/coverage"
 
 [tool.coverage.report]
