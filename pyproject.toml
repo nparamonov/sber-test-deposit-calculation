@@ -57,9 +57,21 @@ max-args = 10
 [tool.ruff.pydocstyle]
 convention = "google"
 
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = "-v"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+markers = [
+    "e2e",
+    "unit",
+]
+
 [tool.coverage.run]
 source = ["src"]
 data_file = ".coverage/coverage"
+command_line = "-m pytest"
 
 [tool.coverage.report]
 exclude_also = [
