@@ -49,3 +49,32 @@ uvicorn src.main:deposit_calculation_app.app --loop uvloop --no-server-header --
 Для Windows uvloop недоступен, поэтому необходимо либо указать `--loop auto`, либо исключить данный параметр.
 
 Полный список доступных параметров: https://www.uvicorn.org/deployment/#running-from-the-command-line
+
+### Тесты
+
+Запуск тестов
+
+```shell
+pytest -v tests
+```
+
+Есть возможность запускать отдельно End-to-end и Unit тесты:
+
+```shell
+pytest -m e2e
+pytest -m unit
+```
+
+Coverage:
+
+```shell
+coverage run -m pytest -m unit && coverage report
+```
+
+### Линтеры, тайп чекеры
+
+```shell
+mypy .
+ruff check .
+deptry .
+```
