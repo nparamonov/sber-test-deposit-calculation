@@ -3,12 +3,12 @@ import datetime
 from pydantic import ConfigDict, RootModel
 from pydantic.functional_validators import BeforeValidator
 
-from src.config import DATE_FORMAT
+from src.config import DATE_FORMAT, FLOAT_PRECISION
 
 
 def str_to_date(value: str) -> datetime.date:
     """Преобразовать строку dd.mm.YYYY в дату"""
-    return datetime.datetime.strptime(value, DATE_FORMAT).date()  # noqa: DTZ007
+    return datetime.datetime.strptime(value, DATE_FORMAT).date()
 
 
 def date_to_str(value: datetime.date) -> str:
@@ -18,7 +18,7 @@ def date_to_str(value: datetime.date) -> str:
 
 def round_float(value: float) -> float:
     """Округлить число до 2 знаков после запятой"""
-    return round(value, 2)
+    return round(value, FLOAT_PRECISION)
 
 
 DateValidator = BeforeValidator(str_to_date)

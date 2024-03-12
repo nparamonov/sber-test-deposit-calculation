@@ -10,3 +10,5 @@ CUSTOM_LOGGERS: Final[list[str]] = [
 ]
 
 DATE_FORMAT: Final[str] = "%d.%m.%Y"
+
+FLOAT_PRECISION: Final[int] = 2
