@@ -7,6 +7,19 @@
 
 Алгоритм расчета: [/docs/task/example.xlsx](/docs/task/example.xlsx)
 
+## Запуск
+
+Собрать образ
+
+```shell
+docker build -t deposit-calculation --target=runtime .
+```
+Запустить контейнер
+
+```shell
+docker run --name deposit-calculation-api -p 8000:8000 -e LOG_LEVEL=INFO deposit-calculation
+```
+
 ## Разработка
 
 ### Установка
