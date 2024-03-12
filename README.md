@@ -1,6 +1,12 @@
 # sber-test-deposit-calculation
 Тестовое задание. Сбер. Сервис для расчета депозита
 
+[![pytest](https://img.shields.io/github/actions/workflow/status/nparamonov/sber-test-deposit-calculation/pytest.yml?branch=main&label=pytest&logo=pytest)](https://github.com/nparamonov/sber-test-deposit-calculation/actions/workflows/pytest.yml)
+[![codecov](https://img.shields.io/codecov/c/github/nparamonov/sber-test-deposit-calculation/main?label=coverage&logo=codecov&token=XNXH274WJJ)](https://codecov.io/gh/nparamonov/sber-test-deposit-calculation)
+[![mypy](https://img.shields.io/github/actions/workflow/status/nparamonov/sber-test-deposit-calculation/mypy.yml?branch=main&label=mypy&logo=python)](https://github.com/nparamonov/sber-test-deposit-calculation/actions/workflows/mypy.yml)
+[![ruff](https://img.shields.io/github/actions/workflow/status/nparamonov/sber-test-deposit-calculation/ruff.yml?branch=main&label=ruff&logo=ruff)](https://github.com/nparamonov/sber-test-deposit-calculation/actions/workflows/ruff.yml)
+[![deptry](https://img.shields.io/github/actions/workflow/status/nparamonov/sber-test-deposit-calculation/deptry.yml?branch=main&label=deptry&logo=deptry)](https://github.com/nparamonov/sber-test-deposit-calculation/actions/workflows/deptry.yml)
+
 ## Задача
 
 ![Задача](/docs/task/task.png)
