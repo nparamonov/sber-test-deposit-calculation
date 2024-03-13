@@ -11,6 +11,6 @@ class DepositDTO:
 
 @dataclass
 class DepositPeriodMonthDTO(DepositDTO):
-    """DTO исходные данные для расчета депозита"""
+    """DTO исходные данные для расчета депозита по месяцам"""
     periods: int
     rate: float

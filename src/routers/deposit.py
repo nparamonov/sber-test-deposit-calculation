@@ -10,7 +10,7 @@ from src.services.deposit import DepositCalculationService
 deposit_router = APIRouter(prefix="/deposit", tags=["deposit"])
 
 @deposit_router.get("/calculation", summary="Расчет депозита", response_model=DepositCalculationResponse)
-async def deposit_calculation(
+def deposit_calculation(
     service: Annotated[DepositCalculationService, Depends(get_deposit_calculation_service)],
 ) -> dict[datetime.date, float]:
     """Получение результата расчета депозита
@@ -20,5 +20,13 @@ async def deposit_calculation(
     по идентификатору. Такой подход мог бы раскрыться при возможности ввода большого числа месяцев, тк сложность
     расчета O(n). Плюс переиспользовать результаты для одинаковых входных параметров. Но от такого решения было решено
     отказаться тк в условиях задачи прописано ограничение на максимальное число месяцев - 60.
+
+    Также можно было бы уводить расчет в подпроцесс (и использовать асинхронный роут):
+    ```
+        import anyio.to_process
+        ...
+        return await anyio.to_process.run_sync(service.calculate)
+    ```
+    Это могло бы пригодиться при более сложных и долгих вычислениях.
     """
     return service.calculate()
